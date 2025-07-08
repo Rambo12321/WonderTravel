@@ -142,7 +142,6 @@ export const RIGHT_CONFETTI = {
   origin: { x: 1, y: 1 },
 };
 
-
 export const user = {
   name: "Rohan",
   email: "rohankaushik2015@gmail.com",
@@ -206,31 +205,31 @@ export const allTrips = [
 ];
 
 export const users = [
-    {
-      id: 1,
-      name: "John Doe",
-      email: "john.doe@example.com",
-      imageUrl: "/assets/images/david.webp",
-      dateJoined: formatDate("2025-01-01"),
-      itineraryCreated: 10,
-      status: "user",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      imageUrl: "/assets/images/david.webp",
-      dateJoined: formatDate("2025-01-02"),
-      itineraryCreated: 4,
-      status: "user",
-    },
-    {
-      id: 3,
-      name: "John Smith",
-      email: "john.smith@example.com",
-      imageUrl: "/assets/images/david.webp",
-      dateJoined: formatDate("2025-01-03"),
-      itineraryCreated: 8,
-      status: "admin",
-    },
-  ];
+  {
+    id: 1,
+    name: "John Doe",
+    email: "john.doe@example.com",
+    imageUrl: "/assets/images/david.webp",
+    dateJoined: formatDate("2025-01-01"),
+    itineraryCreated: 10,
+    status: "user",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    email: "jane.smith@example.com",
+    imageUrl: "/assets/images/david.webp",
+    dateJoined: formatDate("2025-01-02"),
+    itineraryCreated: 4,
+    status: "user",
+  },
+  {
+    id: 3,
+    name: "John Smith",
+    email: "john.smith@example.com",
+    imageUrl: "/assets/images/david.webp",
+    dateJoined: formatDate("2025-01-03"),
+    itineraryCreated: 8,
+    status: "admin",
+  },
+];

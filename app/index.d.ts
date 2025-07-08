@@ -156,4 +156,3 @@ declare interface TripFormData {
   duration: number;
   groupType: string;
 }
-
