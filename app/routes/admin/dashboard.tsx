@@ -1,31 +1,9 @@
 import { Header, StatsCard, TripCard } from "components";
 import React from "react";
+import { dashboardStats, user, allTrips } from "app/constants";
 
 const dashboard = () => {
-  const user = {
-    name: "Rohan",
-    email: "rohankaushik2015@gmail.com",
-  };
-
-  const dashboardStats = {
-    totalusers: 12870,
-    usersJoined: {
-      currentMonth: 120,
-      lastMonth: 80,
-    },
-    totalTrips: 3210,
-    tripsCreated: {
-      currentMonth: 150,
-      lastMonth: 100,
-    },
-    userRole: {
-      total: 62,
-      currentMonth: 25,
-      lastMonth: 15,
-    },
-  };
-
-  const { totalusers, usersJoined, totalTrips, tripsCreated, userRole } =
+  const { totalUsers, usersJoined, totalTrips, tripsCreated, userRole } =
     dashboardStats;
 
   return (
@@ -34,11 +12,11 @@ const dashboard = () => {
         title={`Welcome${user.name ? ` back, ${user.name}` : ", Guest"} 👋🏻`}
         description="Track activities, trends and popular destinations in real time."
       />
-      <section className="felx flex-col gap-6">
+      <section className="flex flex-col gap-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           <StatsCard
             headerTitle="Total Users"
-            total={totalusers}
+            total={totalUsers}
             currentMonthCount={usersJoined.currentMonth}
             lastMonthCount={usersJoined.lastMonth}
           />
@@ -56,8 +34,34 @@ const dashboard = () => {
           />
         </div>
       </section>
-      <StatsCard />
-      <TripCard />
+      <section className="container ">
+        <h1 className="text-xl font-semibold text-dark-100">Created Trips</h1>
+        <div className="trip-grid">
+          {allTrips
+            .slice(0, 4)
+            .map(
+              ({
+                id,
+                name,
+                imageUrls,
+                itinerary,
+                tags,
+                travelStyle,
+                estimatedPrice,
+              }) => (
+                <TripCard
+                  key={id}
+                  id={id.toString()}
+                  name={name}
+                  imageUrl={imageUrls[0]}
+                  location={itinerary?.[0].location ?? ""}
+                  tags={tags}
+                  price={estimatedPrice}
+                />
+              )
+            )}
+        </div>
+      </section>
     </main>
   );
 };
